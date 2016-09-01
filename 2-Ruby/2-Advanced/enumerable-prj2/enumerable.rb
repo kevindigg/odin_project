@@ -33,6 +33,16 @@ module Enumerable
 		true
 	end
 
-	
+	def my_any?
+		if block_given?
+			my_each { |i| return true if yield (i)}
+		else
+			my_each { |i| return true if i }
+		end
+		false
+	end
 
+	def my_none?
+		
+	end
 end
